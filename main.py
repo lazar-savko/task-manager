@@ -1,4 +1,6 @@
-from util import TaskApp, JsonStorage
+from util.util_package import TaskApp
+from storage.storage import JsonStorage
+
 
 def main():
   my_storage = JsonStorage('tasks.json')
