@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Task Manager with JSON Storage and Unsplash Integration
 
 A simple command-line task manager that stores tasks in a JSON file and integrates with Unsplash API to fetch related images for tasks. Live demo here.
@@ -48,3 +49,9 @@ To explore the integration of file storage and external API usage in a Python pr
 1. Clone the repository:
    ```sh
    git clone https://github.com/yourusername/task-manager.git
+=======
+Task Manager is a group project for a task management tool.
+
+
+We dont know excactly what we should write, but this is the file :)
+>>>>>>> 4dbfd7b8d13b3dd008ffceaba16bb8e7cbae35c8
