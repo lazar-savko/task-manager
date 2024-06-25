@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+    body {
+      background-color: pink;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .container {
+    width: 65%;
+    margin: auto;
+    }
+
+    .header {
+      padding: 20px;
+      background-color: rgb(189, 155, 246);
+      text-align: center;
+      color: pink;
+      border: 2px black solid;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      border-bottom: 1px solid #333;
+      padding: 16px;
+      font-size: 20px;
+      transition: background-color 0.3s;
+      color: #fff;
+      height: 170px;
+      text-align: center;
+      position: relative;
+    }
+
+    #myUL li:hover {
+      background-color: rgb(255, 168, 229);
+    }
+
+    .checked {
+      color: black;
+    }
+
+    #myUL li.checked::before {
+      content: "\2713";
+      /* Unicode character for a checkmark */
+      color: #FF24B6;
+      /* Green checkmark */
+      font-size: 24px;
+      float: center-right;
+      margin-right: 12px;
+    }
+
+    li img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 150px;
+    aspect-ratio: 1 / 1;
+    border-radius: 5px;
+    }
+  </style>
+
+</head>
+
+<body>
+ <div class="container">
+  <div id="myDIV" class="header">
+    <h2>My Tasks</h2>
+  </div>
+  <ul id="myUL">
+    {% for task in tasks %}
+      <li {% if task['completed'] == True %}
+            class="checked"
+            {% endif %} >
+      <img src="{{ task['image'] }} "/>{{ task["task"].upper() }}</li>
+      {% endfor %}
+  </ul>
+   </div>
+</body>
+
+</html>

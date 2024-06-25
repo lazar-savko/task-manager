@@ -9,8 +9,6 @@ def get_picture(query):
 
 
 
-# my_json_storage = JsonStorage('tasks.json')
-
 
 class TaskApp:
   def __init__(self, storage):
@@ -54,7 +52,7 @@ class TaskApp:
 
     print('You have added a task')
     print()
-    my_json_storage.sync_tasks(tasks)
+    self.storage.sync_tasks(tasks)
     self.show_tasks()
 
 
@@ -68,7 +66,7 @@ class TaskApp:
         break
       else:
         print(f"Please select a task from 0 to {len(tasks) - 1}.")
-    my_json_storage.sync_tasks(tasks)
+    self.storage.sync_tasks(tasks)
     self.show_tasks()
 
 
@@ -84,7 +82,7 @@ class TaskApp:
         break
       else:
         print(f"Please select a task from 0 to {len(tasks) - 1}.")
-    my_json_storage.sync_tasks(tasks)
+    self.storage.sync_tasks(tasks)
     self.show_tasks()
 
   def show_setup(self):
@@ -150,6 +148,6 @@ class TaskApp:
     new_task_name = input('Enter the new name for the task: ')
     tasks[task_number]["task"] = new_task_name
     print('Task updated successfully.')
-    my_json_storage.sync_tasks(tasks)
+    self.storage.sync_tasks(tasks)
     self.show_tasks()
 
