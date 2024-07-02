@@ -4,11 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1596fe17-c867-46eb-b3f0-ed33bdb531f1" name="Changes" comment="">
+    <list default="true" id="9ae4ade4-f5a1-41fe-aee2-5b22bf42a4ba" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/task-manager.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Task-Manager (1).iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/storage/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks.json" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/util_package.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/util_package.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/tasks.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/tasks.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,42 +36,42 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
+  "associatedIndex": 6
 }]]></component>
-  <component name="ProjectId" id="2iMS7GMqlKz8b0Fi8Jn9XiOH7Md" />
+  <component name="ProjectId" id="2ignrF2uuegoEtksiOKsBidTQ0V" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Python.main.executor": "Run",
+    "Python.app.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Work/Desktop/Code Projects/task-manager/templates"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main"
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Work\Desktop\Code Projects\task-manager\templates" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\WebDev\Desktop\Masterschool\Code Demos\task-manager\static" />
     </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-09665e90c3a7-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15026.15" />
+        <option value="bundled-python-sdk-d68999036c7f-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.14475.56" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1596fe17-c867-46eb-b3f0-ed33bdb531f1" name="Changes" comment="" />
-      <created>1719298785195</created>
+      <changelist id="9ae4ade4-f5a1-41fe-aee2-5b22bf42a4ba" name="Changes" comment="" />
+      <created>1719921293935</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1719298785195</updated>
+      <updated>1719921293935</updated>
     </task>
     <servers />
   </component>

@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <title>Task Manager</title>
+<link rel="icon" href="{{ url_for('static', filename='img/icon.png') }}" type="image/png">
   <style>
     body {
       background-color: pink;
@@ -13,8 +13,8 @@
     }
 
     .container {
-    width: 65%;
-    margin: auto;
+      width: 65%;
+      margin: auto;
     }
 
     .header {
@@ -41,50 +41,98 @@
       position: relative;
     }
 
+    ul li.checked {
+      color: black;
+      text-decoration: line-through;
+    }
+
     #myUL li:hover {
       background-color: rgb(255, 168, 229);
     }
 
-    .checked {
-      color: black;
-    }
-
-    #myUL li.checked::before {
-      content: "\2713";
-      /* Unicode character for a checkmark */
-      color: #FF24B6;
-      /* Green checkmark */
-      font-size: 24px;
-      float: center-right;
-      margin-right: 12px;
-    }
-
     li img {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 150px;
-    aspect-ratio: 1 / 1;
-    border-radius: 5px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 150px;
+      aspect-ratio: 1 / 1;
+      border-radius: 5px;
+    }
+
+    .task-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .task-form input[type="text"],
+    .task-form input[type="url"] {
+      padding: 5px;
+      font-size: 16px;
+      width: 500px;
+    }
+
+    .task-form input[type="submit"] {
+      padding: 5px 10px;
+      font-size: 16px;
+      background-color: #FF24B6;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .task-actions {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      gap: 5px;
+    }
+
+    .task-actions input[type="submit"] {
+      background-color: #FF24B6;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 5px 10px;
+    }
+
+    .task-actions input[type="submit"]:hover {
+      background-color: #e0139c;
     }
   </style>
-
 </head>
 
 <body>
- <div class="container">
-  <div id="myDIV" class="header">
-    <h2>My Tasks</h2>
-  </div>
-  <ul id="myUL">
-    {% for task in tasks %}
-      <li {% if task['completed'] == True %}
-            class="checked"
-            {% endif %} >
-      <img src="{{ task['image'] }} "/>{{ task["task"].upper() }}</li>
+  <div class="container">
+    <div id="myDIV" class="header">
+      <h2>My Tasks</h2>
+      <form class="task-form" action="/add" method="post">
+        <input type="text" name="task" placeholder="New task..." required>
+        <input type="submit" value="Add">
+      </form>
+    </div>
+    <ul id="myUL">
+     {% for i in range(tasks|length) %}
+      <li {% if tasks[i]['completed'] == True %} class="checked" {% endif %}>
+        <img src="{{ tasks[i]['image'] }}" />
+        {{ tasks[i]["task"].upper() }}
+        <div class="task-actions">
+          <form action="/complete" method="post" style="display:inline;">
+            <input type="hidden" name="task_index" value="{{ i }}">
+            <input type="submit" value="Toggle Complete">
+          </form>
+          <form action="/delete" method="post" style="display:inline;">
+            <input type="hidden" name="task_index" value="{{ i }}">
+            <input type="submit" value="Delete">
+          </form>
+        </div>
+      </li>
       {% endfor %}
-  </ul>
-   </div>
+    </ul>
+  </div>
 </body>
 
 </html>
