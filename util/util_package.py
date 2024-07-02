@@ -2,10 +2,13 @@ import requests
 
 
 def get_picture(query):
-  url = f"https://api.unsplash.com/search/photos?page=1&query={query}&client_id=cmUu9QzXb_UGyMEsdfg33hzLnJXA2JrthRgVJ3Ea5Ww"
-  response = requests.get(url)
-  img_url = response.json()['results'][0]['urls']['thumb']
-  return img_url
+  try:
+    url = f"https://api.unsplash.com/search/photos?page=1&query={query}&client_id=cmUu9QzXb_UGyMEsdfg33hzLnJXA2JrthRgVJ3Ea5Ww"
+    response = requests.get(url)
+    img_url = response.json()['results'][0]['urls']['thumb']
+    return img_url
+  except:
+    return "https://fjwp.s3.amazonaws.com/blog/wp-content/uploads/2015/12/09112429/work-life-balance-working-from-home-768x385.jpg"
 
 
 
@@ -48,7 +51,8 @@ class TaskApp:
   def add_task(self):
     tasks = self.storage.load_tasks()
     user_added_task = input("Please insert a new task: ")
-    tasks.append({"task": user_added_task, "completed": False})
+    picture = get_picture(user_added_task)
+    tasks.append({"task": user_added_task, "completed": False, "image": picture})
 
     print('You have added a task')
     print()
