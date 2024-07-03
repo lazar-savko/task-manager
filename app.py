@@ -25,5 +25,17 @@ def add():
     my_storage.sync_tasks(tasks)
     return render_template("template.html", tasks=tasks)
 
+@app.route("/complete", methods=['POST'])
+def complete():
+    tasks = my_storage.load_tasks()
+
+    task_number = int(request.form['task_index'])
+    task = tasks[task_number]
+    task["completed"] = True
+
+    my_storage.sync_tasks(tasks)
+    return render_template("template.html", tasks=tasks)
+
+
 if __name__ == "__main__":
     app.run(debug=True)
