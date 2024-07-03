@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from storage import JsonStorage
+from util import get_picture
 
 app = Flask(__name__)
 
@@ -10,6 +11,19 @@ def homepage():
     tasks = my_storage.load_tasks()
     return render_template("template.html", tasks=tasks)
 
+
+@app.route("/add", methods=['POST'])
+def add():
+    tasks = my_storage.load_tasks()
+    new_task_text = request.form['task']
+    picture = get_picture(new_task_text)
+    tasks.append({
+        'task': new_task_text,
+        'completed': False,
+        'image': picture
+    })
+    my_storage.sync_tasks(tasks)
+    return render_template("template.html", tasks=tasks)
 
 if __name__ == "__main__":
     app.run(debug=True)
