@@ -36,6 +36,14 @@ def complete():
     my_storage.sync_tasks(tasks)
     return render_template("template.html", tasks=tasks)
 
+@app.route("/delete", methods=['POST'])
+def delete():
+    tasks = my_storage.load_tasks()
+    index_to_delete = request.form['task_index']
+    tasks.pop(int(index_to_delete))
+    my_storage.sync_tasks(tasks)
+    return render_template("template.html", tasks=tasks)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
