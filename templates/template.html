@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Task Manager</title>
-<link rel="icon" href="{{ url_for('static', filename='img/icon.png') }}" type="image/png">
+  <link rel="icon" href="{{ url_for('static', filename='img/icon.png') }}" type="image/png">
   <style>
     body {
       background-color: pink;
@@ -97,9 +97,24 @@
       border: none;
       cursor: pointer;
       padding: 5px 10px;
+      height: 29px;
     }
 
     .task-actions input[type="submit"]:hover {
+      background-color: #e0139c;
+    }
+
+    .edit-link {
+      display: inline-block;
+      background-color: #FF24B6;
+      color: #fff;
+      padding: 5px 10px;
+      text-decoration: none;
+      font-size: 12px;
+      height: 20px;
+    }
+
+    .edit-link:hover {
       background-color: #e0139c;
     }
   </style>
@@ -115,7 +130,7 @@
       </form>
     </div>
     <ul id="myUL">
-     {% for i in range(tasks|length) %}
+      {% for i in range(tasks|length) %}
       <li {% if tasks[i]['completed'] == True %} class="checked" {% endif %}>
         <img src="{{ tasks[i]['image'] }}" />
         {{ tasks[i]["task"].upper() }}
@@ -128,6 +143,7 @@
             <input type="hidden" name="task_index" value="{{ i }}">
             <input type="submit" value="Delete">
           </form>
+          <a href="/edit/{{ i }}" class="edit-link">Edit</a>
         </div>
       </li>
       {% endfor %}

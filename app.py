@@ -44,6 +44,5 @@ def delete():
     my_storage.sync_tasks(tasks)
     return render_template("template.html", tasks=tasks)
 
-
 if __name__ == "__main__":
     app.run(debug=True)
