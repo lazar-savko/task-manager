@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Edit Task</title>
+  <link rel="icon" href="{{ url_for('static', filename='img/icon.png') }}" type="image/png">
+  <style>
+    body {
+      background-color: pink;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .container {
+      width: 65%;
+      margin: auto;
+    }
+
+    .header {
+      padding: 20px;
+      background-color: rgb(189, 155, 246);
+      text-align: center;
+      color: pink;
+      border: 2px black solid;
+    }
+
+    .task-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .task-form input[type="text"] {
+      padding: 5px;
+      font-size: 16px;
+      width: 500px;
+    }
+
+    .task-form input[type="submit"] {
+      padding: 5px 10px;
+      font-size: 16px;
+      background-color: #FF24B6;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>Edit Task</h2>
+      <form class="task-form" action="/update/{{ task_index }}" method="post">
+        <input type="text" name="task" value="{{ task }}" required>
+        <input type="submit" value="Update">
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
