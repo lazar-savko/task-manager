@@ -45,11 +45,20 @@ def delete():
     return render_template("template.html", tasks=tasks)
 
 
-@app.route("/edit/<task_index>", methods=['GET'])
+@app.route("/edit/<task_index>", methods=['GET', 'POST'])
 def edit(task_index):
     tasks = my_storage.load_tasks()
     task = tasks[int(task_index)]
-    return render_template("edit-template.html", task_index=task_index, task=task['task'])
+    if task is None:
+        return "Post not found", 404
+    if request.method == 'POST':
+        new_task = request.form.get('task')
+        task['task'] = new_task
+        my_storage.sync_tasks(tasks)
+        return redirect(url_for('homepage'))
+    else:
+        return render_template("edit-template.html", task_index=task_index, task=task['task'])
+
 
 if __name__ == "__main__":
     app.run(debug=True)
