@@ -31,7 +31,10 @@ def complete():
 
     task_number = int(request.form['task_index'])
     task = tasks[task_number]
-    task["completed"] = True
+    if not task["completed"]:
+        task["completed"] = True
+    else:
+        task["completed"] = False
 
     my_storage.sync_tasks(tasks)
     return render_template("template.html", tasks=tasks)
